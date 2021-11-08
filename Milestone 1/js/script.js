@@ -119,9 +119,11 @@ const panels = [
 
 
 // }
-const container = document.getAnimations('container');
+const container = document.getElementById('container');
 console.log('container', container)
 let html = '';
+
+document.getAnimations
 
 for (let panel of panels){
   const name = panel.name;
@@ -130,11 +132,11 @@ for (let panel of panels){
   const family = panel.family;
   const color = panel.color;
 
-  html += `<div class="row">
-  <div class="col">
+  html += `
+
     <div class="panel">
       <div class="image">
-        <i class="${family} ${prefix}${name}"></i>
+        <i class="${family} ${prefix}${name}" style="color:${color}"></i>
       </div>
       <div class="text">
         <span>${name}</span>
@@ -143,8 +145,7 @@ for (let panel of panels){
   </div>
 </div>`
 
-console.log(html)
 
 } 
 
-container.innerHTML = html;
+container.innerHTML += html;
