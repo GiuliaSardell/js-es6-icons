@@ -136,7 +136,7 @@ for (let panel of panels){
 
     <div class="panel">
       <div class="image">
-        <i class="${family} ${prefix}${name}" style="color:${color}"></i>
+        <i class="${family} ${prefix}${name}"></i>
       </div>
       <div class="text">
         <span>${name}</span>
