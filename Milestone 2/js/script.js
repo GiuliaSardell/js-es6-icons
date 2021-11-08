@@ -119,95 +119,7 @@ const container = document.getElementById('container');
 console.log('container', container)
 let html = '';
 
-const select = document.getElementById('select')
-console.log('select',select)
-
-console.log(select[1].innerHTML)
-console.log(select[2].innerHTML)
-console.log(select[3].innerHTML)
-console.log('panel',panels)
-
-let panel
-generatePanels(panel, panels)
-
-const selectElement = document.querySelector('.form-select');
-
-selectElement.addEventListener('change', (event) => {
-	
-	console.log('-------- container',container)
-	
-	console.log('hai selezionato ',event.target.value)
-
-	if (event.target.value === '1'){
-
-		const animal = panels.filter(( panel => {
-	
-			if(panel.type == 'animal'){
-				return true
-			}
-			return false
-			
-		}))
-		console.log('nuovo array animals', animal)
-
-		
-		let an
-		generatePanels(an, animal)
-	
-	}
-
-	if (event.target.value === '2'){
-		
-
-		const vegetable = panels.filter(( panel => {
-	
-			if(panel.type == 'vegetable'){
-				return true
-			}
-			return false
-			
-		}))
-		console.log('nuovo array vegetable', vegetable)
-
-		// document.querySelector('main').innerHTML = '';
-		let veg
-
-		generatePanels(veg, vegetable)
-	
-	}
-
-	if (event.target.value === '3'){
-		
-
-		const users = panels.filter(( panel => {
-	
-			if(panel.type == 'user'){
-				return true
-			}
-			return false
-			
-		}))
-		console.log('nuovo array vegetable', users)
-
-		// document.querySelector('main').innerHTML = '';
-		let user
-
-		generatePanels(user, users)
-	
-	}
-
-
-});
-
-
-
-
-
-
-
-function generatePanels(panel, panels){
-
-	container.innerHTML= '';
+document.querySelector('main').innerHTML= '';
 
 	for (let panel of panels){
   const name = panel.name;
@@ -230,8 +142,6 @@ function generatePanels(panel, panels){
 </div>`
 
 
-} 
-container.innerHTML += html;
-
-}
+	} 
+	container.innerHTML += html;
 
