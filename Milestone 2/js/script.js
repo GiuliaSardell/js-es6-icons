@@ -114,11 +114,7 @@ const panels = [
 ];
 
 
-// for (let i = 0; i < panels.length; i++){
-//   const panel = panels[i]
 
-
-// }
 const container = document.getElementById('container');
 console.log('container', container)
 let html = '';
@@ -149,3 +145,62 @@ for (let panel of panels){
 } 
 
 container.innerHTML += html;
+
+const select = document.getElementById('select')
+console.log('select',select)
+
+// const selected = select.value
+// console.log('selected',selected)
+
+console.log(select[1].innerHTML)
+console.log(select[2].innerHTML)
+console.log(select[3].innerHTML)
+console.log('panel',panels)
+
+for (let panel of panels){
+	const type = panel.type
+	console.log('type',type)
+
+	const animal = panels.filter(( panel => {
+		if (type.toLowerCase == select[1].innerHTML.toLowerCase ){
+			return true
+		}
+		return false
+		
+	}))
+}
+
+// const selectElement = document.querySelector('.form-select');
+
+// selectElement.addEventListener('change', (event) => {
+//   console.log('You like', event.target.value)
+// });
+
+let type
+const selectElement = document.querySelector('.form-select');
+
+selectElement.addEventListener('change', (event) => {
+  
+	console.log('hai selezionato ',event.target.value)
+
+		if (event.target.value === 1){
+			let type = parseInt('animal')
+		} else if (event.target.value === 2){
+			let type = 'vegetable'
+		} else if (event.target.value === 3){
+			let type = 'user'
+		}
+		
+		console.log(type)
+
+
+});
+
+
+
+
+
+
+
+
+
